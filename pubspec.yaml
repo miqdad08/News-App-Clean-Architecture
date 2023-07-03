@@ -62,6 +62,7 @@ dependencies:
 
   #google fonts
   google_fonts: ^5.1.0
+  dio: ^5.2.1+1
 
 
 
