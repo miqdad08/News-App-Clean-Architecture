@@ -60,6 +60,9 @@ dependencies:
   #image cache
   cached_network_image: ^3.2.3
 
+  #google fonts
+  google_fonts: ^5.1.0
+
 
 
 
