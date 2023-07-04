@@ -22,7 +22,7 @@ class ArticleEntity extends Equatable {
   });
 
   @override
-  List<Object ? > get props{
+  List<Object?> get props {
     return [
       id,
       author,
