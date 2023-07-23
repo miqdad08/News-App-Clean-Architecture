@@ -5,6 +5,19 @@ class DailyNews extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      appBar: _buildAppbar(),
+    );
+  }
+
+  _buildAppbar() {
+    return AppBar(
+      title: const Text(
+        'Daily News',
+        style: TextStyle(
+          color: Colors.black,
+        ),
+      ),
+    );
   }
 }
