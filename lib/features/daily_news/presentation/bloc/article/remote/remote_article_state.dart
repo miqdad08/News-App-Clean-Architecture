@@ -1,27 +1,27 @@
 part of 'remote_article_bloc.dart';
 
 @immutable
-abstract class RemoteArticleState extends Equatable {
+abstract class RemoteArticlesState extends Equatable {
   final List<ArticleEntity>? articles;
   final DioException? error;
 
-  const RemoteArticleState({this.articles, this.error});
+  const RemoteArticlesState({this.articles, this.error});
 
   @override
   List<Object> get props => [articles!, error!];
 }
 
-class RemoteArticleInitial extends RemoteArticleState {}
+class RemoteArticleInitial extends RemoteArticlesState {}
 
-class RemoteArticleLoading extends RemoteArticleState {
+class RemoteArticleLoading extends RemoteArticlesState {
   const RemoteArticleLoading();
 }
 
-class RemoteArticleSuccess extends RemoteArticleState {
+class RemoteArticleSuccess extends RemoteArticlesState {
   const RemoteArticleSuccess(List<ArticleEntity> article)
       : super(articles: article);
 }
 
-class RemoteArticleFailed extends RemoteArticleState {
+class RemoteArticleFailed extends RemoteArticlesState {
   const RemoteArticleFailed(DioException error) : super(error: error);
 }
