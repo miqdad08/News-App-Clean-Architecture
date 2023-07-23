@@ -53,7 +53,7 @@ class _NewsApiService implements NewsApiService {
               baseUrl,
             ))));
     List<ArticleModel> value = _result.data!['articles']
-        .map((dynamic i) => ArticleModel.fromJson(i as Map<String, dynamic>))
+        .map<ArticleModel>((dynamic i) => ArticleModel.fromJson(i as Map<String, dynamic>))
         .toList();
     final httpResponse = HttpResponse(value, _result);
     return httpResponse;
