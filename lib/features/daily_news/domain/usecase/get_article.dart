@@ -4,11 +4,11 @@ import 'package:news_app_clean_architecture/features/daily_news/domain/repositor
 
 import '../../../../core/resources/data_state.dart';
 
-class GetArticleUseCase
+class GetArticlesUseCase
     implements UseCase<DataState<List<ArticleEntity>>, void> {
   final ArticleRepository _articleRepository;
 
-  GetArticleUseCase(this._articleRepository);
+  GetArticlesUseCase(this._articleRepository);
 
   @override
   Future<DataState<List<ArticleEntity>>> call({void params}) {
