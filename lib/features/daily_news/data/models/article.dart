@@ -1,5 +1,8 @@
+import 'package:floor/floor.dart';
 import 'package:news_app_clean_architecture/features/daily_news/domain/entities/article.dart';
 
+
+@Entity(tableName: 'article', primaryKeys: [''])
 class ArticleModel{
   ArticleModel({
     this.id,
@@ -23,7 +26,6 @@ class ArticleModel{
 
   factory ArticleModel.fromJson(Map<String, dynamic> map) {
     return ArticleModel(
-      id: map['id'] ?? 0,
       author: map['author'] ?? '',
       title: map['title'] ?? '',
       description: map['description'] ?? '',
