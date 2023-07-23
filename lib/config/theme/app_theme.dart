@@ -15,7 +15,6 @@ AppBarTheme appBarTheme() {
     elevation: 0,
     centerTitle: true,
     iconTheme: IconThemeData(color: Color(0XFF8B8B8B)),
-    titleTextStyle: TextStyle(color: Color(0XFF8B8B8B))
   );
 }
 
