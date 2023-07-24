@@ -37,4 +37,22 @@ class ArticleRepositoryImpl implements ArticleRepository {
       return DataFailed(e);
     }
   }
+
+  @override
+  Future<void> deleteArticle(ArticleEntity articleEntity) {
+    // TODO: implement deleteArticle
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<List<ArticleEntity>> getSavedArticle() {
+    // TODO: implement getSavedArticle
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> saveArticle(ArticleEntity article) {
+    // TODO: implement saveArticle
+    throw UnimplementedError();
+  }
 }
