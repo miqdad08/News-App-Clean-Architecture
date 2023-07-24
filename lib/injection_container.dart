@@ -15,13 +15,14 @@ final sl = GetIt.instance;
 Future<void> initializeDependencies() async {
 
   final database = await $FloorAppDatabase.databaseBuilder('app_database.db').build();
-  sl.registerSingleton<AppDatabase>(database);
 
   // Dio
   sl.registerSingleton<Dio>(Dio());
 
   // Dependencies
   sl.registerSingleton<NewsApiService>(NewsApiService(sl()));
+
+  sl.registerSingleton<AppDatabase>(database);
 
   //Repository
   sl.registerSingleton<ArticleRepository>(ArticleRepositoryImpl(sl(), sl()));
