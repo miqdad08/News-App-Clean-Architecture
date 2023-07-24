@@ -38,6 +38,7 @@ class ArticleModel{
 
   ArticleEntity toEntity() {
     return ArticleEntity(
+      id: id,
       author: author,
       title: title,
       description: description,
