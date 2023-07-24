@@ -1,21 +1,21 @@
 part of 'local_article_bloc.dart';
 
 @immutable
-abstract class LocalArticleState extends Equatable{
+abstract class LocalArticlesState extends Equatable{
   final List<ArticleEntity> ? articles;
 
-  const LocalArticleState({this.articles});
+  const LocalArticlesState({this.articles});
 
   @override
   List<Object?> get props => [articles!];
 }
 
-class LocalArticleInitial extends LocalArticleState {}
+class LocalArticleInitial extends LocalArticlesState {}
 
-class LocalArticleLoading extends LocalArticleState{
+class LocalArticleLoading extends LocalArticlesState{
   const LocalArticleLoading();
 }
 
-class LocalArticleSuccess extends LocalArticleState{
+class LocalArticleSuccess extends LocalArticlesState{
   const LocalArticleSuccess(List<ArticleEntity> articles) : super(articles: articles);
 }
