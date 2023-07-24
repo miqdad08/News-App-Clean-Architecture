@@ -11,12 +11,12 @@ part 'local_article_event.dart';
 
 part 'local_article_state.dart';
 
-class LocalArticleBloc extends Bloc<LocalArticlesEvent, LocalArticlesState> {
+class LocalArticlesBloc extends Bloc<LocalArticlesEvent, LocalArticlesState> {
   final GetSavedArticleUseCase _getSavedArticleUseCase;
   final SaveArticleUseCase _saveArticleUseCase;
   final RemoveArticleUseCase _removeArticleUseCase;
 
-  LocalArticleBloc(
+  LocalArticlesBloc(
     this._getSavedArticleUseCase,
     this._saveArticleUseCase,
     this._removeArticleUseCase,
