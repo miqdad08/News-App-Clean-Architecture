@@ -10,5 +10,5 @@ abstract class ArticleRepository{
 
   Future<void> saveArticle(ArticleEntity article);
 
-  Future<void> deleteArticle(ArticleEntity articleEntity);
+  Future<void> removeArticle(ArticleEntity articleEntity);
 }
