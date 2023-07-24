@@ -1,6 +1,6 @@
 
 import 'package:floor/floor.dart';
-import '../../models/article.dart';
+import '../../../models/article.dart';
 
 @dao
 abstract class ArticleDao{
