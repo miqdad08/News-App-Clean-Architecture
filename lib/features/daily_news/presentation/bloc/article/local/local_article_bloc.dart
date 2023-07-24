@@ -6,9 +6,9 @@ import 'package:news_app_clean_architecture/features/daily_news/domain/entities/
 part 'local_article_event.dart';
 part 'local_article_state.dart';
 
-class LocalArticleBloc extends Bloc<LocalArticleEvent, LocalArticleState> {
+class LocalArticleBloc extends Bloc<LocalArticlesEvent, LocalArticleState> {
   LocalArticleBloc() : super(LocalArticleInitial()) {
-    on<LocalArticleEvent>((event, emit) {
+    on<LocalArticlesEvent>((event, emit) {
       // TODO: implement event handler
     });
   }
