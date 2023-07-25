@@ -5,7 +5,7 @@ import 'package:news_app_clean_architecture/features/daily_news/presentation/blo
 import 'package:news_app_clean_architecture/features/daily_news/presentation/pages/home/daily_news.dart';
 import 'package:news_app_clean_architecture/injection_container.dart';
 
-import 'features/daily_news/presentation/pages/home/article_detail.dart';
+import 'features/daily_news/presentation/pages/article_detail/article_detail.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
