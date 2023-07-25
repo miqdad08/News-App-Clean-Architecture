@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:news_app_clean_architecture/features/daily_news/domain/entities/article.dart';
 import 'package:news_app_clean_architecture/features/daily_news/presentation/bloc/article/remote/remote_article_bloc.dart';
+import 'package:news_app_clean_architecture/features/daily_news/presentation/pages/article_detail/article_detail.dart';
 import 'package:news_app_clean_architecture/features/daily_news/presentation/widgets/article_item.dart';
 
 class DailyNews extends StatelessWidget {
@@ -45,6 +47,7 @@ class DailyNews extends StatelessWidget {
             itemBuilder: (context, index) {
               return ArticleWidget(
                 article: state.articles![index],
+                onArticlePressed: (article) => _onArticlePressed(context,article),
               );
             },
           );
@@ -53,4 +56,9 @@ class DailyNews extends StatelessWidget {
       },
     );
   }
+
+  void _onArticlePressed(BuildContext context, ArticleEntity article){
+    Navigator.pushNamed(context, ArticleDetail.routeName, arguments: article);
+  }
+
 }
