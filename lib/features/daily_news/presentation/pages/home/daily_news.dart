@@ -43,6 +43,7 @@ class DailyNews extends StatelessWidget {
         }
         if (state is RemoteArticleSuccess) {
           return ListView.builder(
+            physics: const BouncingScrollPhysics(),
             itemCount: state.articles!.length,
             itemBuilder: (context, index) {
               return ArticleWidget(
