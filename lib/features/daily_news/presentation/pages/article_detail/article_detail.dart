@@ -105,6 +105,7 @@ class ArticleDetail extends StatelessWidget {
   Widget _buildFloatingActionButton() {
     return Builder(
       builder: (BuildContext context) => FloatingActionButton(
+        backgroundColor: Colors.black,
         onPressed: () => _onFloatingActionButtonPressed(context),
         child: const Icon(
           CupertinoIcons.bookmark,
