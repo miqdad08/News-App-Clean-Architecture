@@ -17,6 +17,7 @@ class ArticleDetail extends StatelessWidget {
     return BlocProvider(
       create: (_) => sl<LocalArticlesBloc>(),
       child: Scaffold(
+        appBar: _buildAppBar(),
         body: _buildBody(),
         floatingActionButton: _buildFloatingActionButton(),
       ),
@@ -89,6 +90,18 @@ class ArticleDetail extends StatelessWidget {
     );
   }
 
+  PreferredSizeWidget _buildAppBar() {
+    return AppBar(
+      leading: Builder(
+        builder: (context) => GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onTap: () => _onBackButtonTapped(context),
+          child: const Icon(CupertinoIcons.chevron_back, color: Colors.black),
+        ),
+      ),
+    );
+  }
+
   Widget _buildFloatingActionButton() {
     return Builder(
       builder: (BuildContext context) => FloatingActionButton(
@@ -110,4 +123,9 @@ class ArticleDetail extends StatelessWidget {
       ),
     );
   }
+
+  void _onBackButtonTapped(BuildContext context) {
+    Navigator.pop(context);
+  }
+
 }
