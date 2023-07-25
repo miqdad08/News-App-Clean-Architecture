@@ -61,6 +61,7 @@ class SavedArticles extends StatelessWidget {
       return const Center(child: Text('NO SAVED ARTICLES'),);
     }
     return ListView.builder(
+      physics: const BouncingScrollPhysics(),
       itemCount: articles.length,
       itemBuilder: (context, index) {
         return ArticleWidget(
