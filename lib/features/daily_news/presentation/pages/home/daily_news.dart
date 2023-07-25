@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app_clean_architecture/features/daily_news/domain/entities/article.dart';
 import 'package:news_app_clean_architecture/features/daily_news/presentation/bloc/article/remote/remote_article_bloc.dart';
 import 'package:news_app_clean_architecture/features/daily_news/presentation/pages/article_detail/article_detail.dart';
+import 'package:news_app_clean_architecture/features/daily_news/presentation/pages/saved_article/saved_article.dart';
 import 'package:news_app_clean_architecture/features/daily_news/presentation/widgets/article_item.dart';
 
 class DailyNews extends StatelessWidget {
@@ -12,12 +13,12 @@ class DailyNews extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _buildAppbar(),
+      appBar: _buildAppbar(context),
       body: _buildBody(),
     );
   }
 
-  _buildAppbar() {
+  _buildAppbar(BuildContext context) {
     return AppBar(
       title: const Text(
         'Daily News',
@@ -25,6 +26,15 @@ class DailyNews extends StatelessWidget {
           color: Colors.black,
         ),
       ),
+      actions: [
+        GestureDetector(
+          onTap: () => _onShowSavedArticlesViewTapped(context),
+          child: const Icon(
+            Icons.bookmark,
+            color: Colors.black,
+          ),
+        ),
+      ],
     );
   }
 
@@ -48,7 +58,8 @@ class DailyNews extends StatelessWidget {
             itemBuilder: (context, index) {
               return ArticleWidget(
                 article: state.articles![index],
-                onArticlePressed: (article) => _onArticlePressed(context,article),
+                onArticlePressed: (article) =>
+                    _onArticlePressed(context, article),
               );
             },
           );
@@ -58,8 +69,11 @@ class DailyNews extends StatelessWidget {
     );
   }
 
-  void _onArticlePressed(BuildContext context, ArticleEntity article){
+  void _onArticlePressed(BuildContext context, ArticleEntity article) {
     Navigator.pushNamed(context, ArticleDetail.routeName, arguments: article);
   }
 
+  void _onShowSavedArticlesViewTapped(context) {
+    Navigator.pushNamed(context, SavedArticles.routeName);
+  }
 }
