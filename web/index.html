@@ -44,11 +44,15 @@
     window.addEventListener('load', function(ev) {
       // Download main.dart.js
       _flutter.loader.loadEntrypoint({
+        // add service worker
         serviceWorker: {
+          // define sw version
           serviceWorkerVersion: serviceWorkerVersion,
         },
         onEntrypointLoaded: function(engineInitializer) {
+          // engline initializer function
           engineInitializer.initializeEngine().then(function(appRunner) {
+            // run app
             appRunner.runApp();
           });
         }
